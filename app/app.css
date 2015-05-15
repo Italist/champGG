@@ -3,12 +3,11 @@ html {
   -webkit-text-size-adjust: 100%;
 	  -ms-text-size-adjust: 100%;
 }
-body{
-    user-select: none;
+body{  
 	margin: 5px;
 }
 div {
-	border: 0px solid;
+	border: 0 solid;
 }
 .noselect {
     cursor:default;
@@ -18,4 +17,7 @@ div {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+.th {
+  background-color: transparent;
 }
