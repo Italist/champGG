@@ -1,15 +1,20 @@
-# champGG
-Creates custom item sets for every champion in their most popular roles using data from the site http://champion.gg
+champGG
+=========
+
+## Easily create custom item sets for every champion in their most popular roles using data from the site http://champion.gg
 
 The data used to create these item sets is from Platinum+ players which means you will have great builds for all champs!
 
-Features include:
+# Features include:
+![Ingame Screenshot](https://i.imgur.com/ZBOf3WI.png)
 * Most popular builds
 * Highest win rate builds
 * Most popular starting items
 * Highest win rate starting items
 * Consumables
 * Skill order (First 5 to get and the order to max)
+![Main Screen](http://i.imgur.com/ZoZuIvz.png)
+![Working Screenshot](http://i.imgur.com/EttnZ3J.png)
 * Auto saving item sets into the League of Legends client
 * Removing previous patch item sets (It doesn't touch item sets you have made)
 * Fast and slow download modes in the event your internet connection isn't the greatest
