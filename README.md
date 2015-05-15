@@ -17,8 +17,8 @@ The data used to create these item sets is from Platinum+ players which means yo
 * Removing previous patch item sets (It doesn't touch item sets you have made)
 * Fast and slow download modes in the event your internet connection isn't the greatest
 * Garena Support
-![Main Screen](http://i.imgur.com/ZoZuIvz.png =250x)
-![Working Screenshot](http://i.imgur.com/EttnZ3J.png =250x)
+![Main Screen](http://i.imgur.com/ZoZuIvz.png =50x)
+![Working Screenshot](http://i.imgur.com/EttnZ3J.png =50x)
 ## Setup
 
 1. Grab the champGG.exe at https://github.com/Gavin770/champGG/releases/latest
