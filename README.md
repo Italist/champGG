@@ -6,7 +6,9 @@ The data used to create these item sets is from Platinum+ players which means yo
 1. Grab the champGG.exe at https://github.com/Gavin770/champGG/releases/latest
 2. Run champGG.exe
 ## Features include:
+
 ![Ingame Screenshot](https://i.imgur.com/2igOUwo.png)
+
 * Most popular builds
 * Highest win rate builds
 * Most popular starting items
@@ -17,7 +19,9 @@ The data used to create these item sets is from Platinum+ players which means yo
 * Removing previous patch item sets (It doesn't touch item sets you have made)
 * Fast and slow download modes in the event your internet connection isn't the greatest
 * Garena Support
+
 ![Working Screenshot](https://i.imgur.com/vcboWkZ.png)
+
 ## Will Riot ban me?
 According to Reddit: A rioter [did this originally](https://www.reddit.com/r/leagueoflegends/comments/2xfovt/i_wrote_a_script_to_generate_item_sets_from/), so it's safe. it doesn't affect gameplay, and you're not doing anything you couldn't do manually if you wanted to waste dozens of hours of your life every patch. Go wild!
 
