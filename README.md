@@ -1,12 +1,12 @@
 champGG
 =========
-
 #### Easily create custom item sets for every champion in their most popular roles using data from the site http://champion.gg
-
 The data used to create these item sets is from Platinum+ players which means you will have great builds for all champs!
-
+## Setup
+1. Grab the champGG.exe at https://github.com/Gavin770/champGG/releases/latest
+2. Run champGG.exe
 ## Features include:
-<img src="https://i.imgur.com/2igOUwo.png" alt="Ingame Screenshot" style="width: 200px;"/>
+![Ingame Screenshot](https://i.imgur.com/2igOUwo.png)
 * Most popular builds
 * Highest win rate builds
 * Most popular starting items
@@ -17,21 +17,12 @@ The data used to create these item sets is from Platinum+ players which means yo
 * Removing previous patch item sets (It doesn't touch item sets you have made)
 * Fast and slow download modes in the event your internet connection isn't the greatest
 * Garena Support
-<img src="http://i.imgur.com/ZoZuIvz.png" alt="Main Screen" style="width: 200px;"/>
-<img src="http://i.imgur.com/EttnZ3J.png" alt="Working Screenshot" style="float: right; width: 200px;"/>
-## Setup
-
-1. Grab the champGG.exe at https://github.com/Gavin770/champGG/releases/latest
-2. Run champGG.exe
-
+![Working Screenshot](https://i.imgur.com/vcboWkZ.png)
 ## Will Riot ban me?
-
 According to Reddit: A rioter [did this originally](https://www.reddit.com/r/leagueoflegends/comments/2xfovt/i_wrote_a_script_to_generate_item_sets_from/), so it's safe. it doesn't affect gameplay, and you're not doing anything you couldn't do manually if you wanted to waste dozens of hours of your life every patch. Go wild!
 
 tldr: No.
-
 ## Credits
-
 Original PHP script by ebildude123 - https://github.com/ebildude123/champion.gg-item-set-creator
 
 Item set data provided by https://champion.gg/
