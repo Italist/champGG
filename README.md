@@ -1,25 +1,29 @@
 # champGG
-Downloads item sets from champion.gg to be used with a League of Legends client
+Creates custom item sets for every champion in their most popular roles using data from the site http://champion.gg
 
-The program contains the options to include (or exclude)
+The data used to create these item sets is from Platinum+ players which means you will have great builds for all champs!
 
-Most Frequent Builds, Highest Win% Builds, Starter Items, Consumables and Skill Order
-
+Features include:
+* Most popular builds
+* Highest win rate builds
+* Most popular starting items
+* Highest win rate starting items
+* Consumables
+* Skill order (First 5 to get and the order to max)
+* Auto saving item sets into the League of Legends client
+* Removing previous patch item sets (It doesn't touch item sets you have made)
+* Fast and slow download modes in the event your internet connection isn't the greatest
+* Garena Support
 
 # Setup
 
-1. Click the Download ZIP button on the right
-2. Extract the files from the zip archive
-3. Run champGG.exe
+1. Grab the champGG.exe at https://github.com/Gavin770/champGG/releases/latest
+2. Run champGG.exe
 
-I use nwjs.io to have direct access to node.js from the dom. I provided the exe but if you want to redownload it you can at http://nwjs.io/ (formerly node-webkit). I renamed mine to champGG.exe from nw.exe
+# Alpha Version Setup
 
-
-# Usage
-
-1. Open the champGG.exe, choose what sets to include, click Download and the program will start downloading the item sets if the champion.gg site can be reached and they haven't changed their code in a way that breaks the app.
-2. Copy the folders with champion names from .\ItemSets\Date_AllSets\ to Your_League_Install_Directory\Config\Champions\
-3. Play League!
+1. Grab the program at https://github.com/Gavin770/champGG/releases/download/v2.0-alpha/champGG.exe
+2. Run champGG.exe
 
 # Will Riot ban me?
 
