@@ -49,7 +49,7 @@ var App = {
 	},
 	writeSettings:function(){
 		var data = "var settings = " + JSON.stringify(settings, null, "\t");
-		App.writeFile("settings.js", data);
+		App.writeFile("app/settings.js", data);
 	},
 	isValidDir:function(mode){
 		var path = settings[mode + "InstallDir"] + settings[mode + "ItemsetDir"];
