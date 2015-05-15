@@ -14,37 +14,37 @@ Created by Gavin Delphia in 2015
 
 <body onload="App.ini()" onbeforeunload="App.writeSettings()">
 
-<div id="ui1">
+<div id="ui1" class="noselect">
 	<center>
 		<br>
-		<table>
+		<table class="table-hover">
 			<th><center>ItemSet Options</center></th>
-			<tr>
+			<tr onclick="selectRow(this)">
 				<td title="Include the most popular builds" style="width:150px;">frequent builds</td><td> <input id="frequent" type="checkbox" class="checkbox"></td>
 			</tr>
-			<tr>
+			<tr onclick="selectRow(this)">
 				<td title="Include builds with the highest win rate">high win% builds</td><td> <input id="winrate" type="checkbox" class="checkbox" checked></td>
 			</tr>
-			<tr>
+			<tr onclick="selectRow(this)">
 				<td title="Include a set specific for starter items">starter items</td><td> <input id="starters" type="checkbox" class="checkbox" checked></td>
 			</tr>
-			<tr>
+			<tr onclick="selectRow(this)">
 				<td title="Include a generic consumable set for all champions">consumables</td><td> <input id="consumables" type="checkbox" class="checkbox" checked></td>
 			</tr>
-			<tr>
+			<tr onclick="selectRow(this)">
 				<td title="Include first 5 skills to build and skill max order">skill order</td><td> <input id="skills" type="checkbox" class="checkbox" checked></td>
 			</tr>
 
 			<tr><td>&nbsp;</td></tr>
 
 			<th><center>Client Options</center></th>
-			<tr>
+			<tr onclick="selectRow(this)">
 				<td title="Remove old champion.gg item sets. Will not remove custom sets you have created">remove old sets</td><td> <input id="remove_old" type="checkbox" class="checkbox" checked></td>
 			</tr>
-			<tr>
+			<tr onclick="selectRow(this)">
 				<td title="Enables client compatibility with the Garena region">garena client</td><td> <input id="garena" type="checkbox" class="checkbox"></td>
 			</tr>
-			<tr>
+			<tr onclick="selectRow(this)">
 				<td title="A possible fix for connection errors and slower internet connections" style="width:150px;">slow download mode</td><td> <input id="slowmode" type="checkbox" class="checkbox"></td>
 			</tr>
 		</table>
@@ -79,5 +79,6 @@ Created by Gavin Delphia in 2015
 </span>
 <script src="settings.js"></script>
 <script src="app.js"></script>
+<script src="checkboxes.js"></script>
 </body>
 </html>
