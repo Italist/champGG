@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--
+Created by Gavin Delphia in 2015
+-->
+<html lang="en">
+
+<head>
+<title>champGG itemSet utility</title>
+
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="app.css">
+</head>
+
+<body onload="App.ini()" onbeforeunload="App.writeSettings()">
+
+<div id="ui1">
+	<center>
+		<br>
+		<table>
+			<th><center>ItemSet Options</center></th>
+			<tr>
+				<td title="Include the most popular builds" style="width:150px;">frequent builds</td><td> <input id="frequent" type="checkbox" class="checkbox"></td>
+			</tr>
+			<tr>
+				<td title="Include builds with the highest win rate">high win% builds</td><td> <input id="winrate" type="checkbox" class="checkbox" checked></td>
+			</tr>
+			<tr>
+				<td title="Include a set specific for starter items">starter items</td><td> <input id="starters" type="checkbox" class="checkbox" checked></td>
+			</tr>
+			<tr>
+				<td title="Include a generic consumable set for all champions">consumables</td><td> <input id="consumables" type="checkbox" class="checkbox" checked></td>
+			</tr>
+			<tr>
+				<td title="Include first 5 skills to build and skill max order">skill order</td><td> <input id="skills" type="checkbox" class="checkbox" checked></td>
+			</tr>
+
+			<tr><td>&nbsp;</td></tr>
+
+			<th><center>Client Options</center></th>
+			<tr>
+				<td title="Remove old champion.gg item sets. Will not remove custom sets you have created">remove old sets</td><td> <input id="remove_old" type="checkbox" class="checkbox" checked></td>
+			</tr>
+			<tr>
+				<td title="Enables client compatibility with the Garena region">garena client</td><td> <input id="garena" type="checkbox" class="checkbox"></td>
+			</tr>
+			<tr>
+				<td title="A possible fix for connection errors and slower internet connections" style="width:150px;">slow download mode</td><td> <input id="slowmode" type="checkbox" class="checkbox"></td>
+			</tr>
+		</table>
+
+		<br>
+
+		<b>Change Save Locations</b>
+		<br>
+		<input type="button" value="League" onclick="App.setConfig('league');" class="btn btn-default">
+		<input type="button" value="Garena" onclick="App.setConfig('garena');" class="btn btn-default">
+
+		<br><br>
+		<input type="button" value="Download Item Sets" onclick="App.iniDownload();" class="btn btn-default">
+		<br><br>
+	</center>
+</div>
+
+
+<div id="output" style="height:480px;width:100%;overflow-y:scroll;font-size:10px;color:#c0c0c0;display:none;" class="well"></div>
+
+<span style="font-size:10px;color:#c0c0c0;" id="status"></span>
+
+<span style="font-size:10px;color:#c0c0c0;" id="credits">
+	<center>
+		<br>
+		Original PHP script by ebildude123 <a href="javascript:App.openURL('https://github.com/ebildude123/champion.gg-item-set-creator')">Github</a>
+		<br>
+		Item Data provided by <a href="javascript:App.openURL('http://champion.gg')">http://champion.gg/</a>
+		<br>
+		Created by Gavin Delphia
+	</center>
+</span>
+<script src="settings.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

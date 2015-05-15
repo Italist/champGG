@@ -1,11 +1,11 @@
 {
-  "main": "app.html",
+  "main": "app/app.html",
   "name": "champGG",
   "description": "Gets the latest Champion.gg builds for League of Legends",
   "version": "1.0.0",
   "window": {
     "title": "champGG",
-    "icon": "icon.png",
+    "icon": "app/icon.png",
     "toolbar": false,
     "frame": true,
     "width": 350,
