@@ -1,5 +1,7 @@
 function selectRow(row) {
     "use strict";
     var firstInput = row.getElementsByTagName('input')[0];
-    firstInput.checked = !firstInput.checked;
+    if (event.target.type !== 'checkbox') {
+        firstInput.checked = !firstInput.checked;
+    }
 }

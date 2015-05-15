@@ -6,8 +6,6 @@ Created by Gavin Delphia in 2015
 
 <head>
 <title>champGG itemSet utility</title>
-
-    <link href="bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="app.css">
 </head>
@@ -17,9 +15,9 @@ Created by Gavin Delphia in 2015
 <div id="ui1" class="noselect">
 	<center>
 		<br>
-		<table class="table-hover">
+		<table class="table-hover spaceUnder">
             <tr>
-                <th><center>ItemSet Options</center></th>
+                <th><center><b>ItemSet Options</b></center></th>
             </tr>
 			<tr onclick="selectRow(this)">
 				<td title="Include the most popular builds" style="width:150px;">frequent builds</td><td> <input id="frequent" type="checkbox" class="checkbox"></td>
@@ -36,11 +34,10 @@ Created by Gavin Delphia in 2015
 			<tr onclick="selectRow(this)">
 				<td title="Include first 5 skills to build and skill max order">skill order</td><td> <input id="skills" type="checkbox" class="checkbox" checked></td>
 			</tr>
-
-			<tr><td>&nbsp;</td></tr>
-
+        </table>
+        <table class="table-hover spaceUnder">
             <tr>
-                <th><center>Client Options</center></th>
+                <th><center><b>Client Options</b></center></th>
             </tr>
 			<tr onclick="selectRow(this)">
 				<td title="Remove old champion.gg item sets. Will not remove custom sets you have created">remove old sets</td><td> <input id="remove_old" type="checkbox" class="checkbox" checked></td>
@@ -53,15 +50,13 @@ Created by Gavin Delphia in 2015
 			</tr>
 		</table>
 
-		<br>
-
-		<b>Change Save Locations</b>
-		<br>
+        <h5><b>Change Save Locations</b></h5>
+		
 		<input type="button" value="League" onclick="App.setConfig('league');" class="btn btn-default">
 		<input type="button" value="Garena" onclick="App.setConfig('garena');" class="btn btn-default">
 
 		<br><br>
-		<input type="button" value="Download Item Sets" onclick="App.iniDownload();" class="btn btn-default">
+		<input type="button" value="Download Item Sets" onclick="App.iniDownload();" class="btn btn-primary">
 		<br><br>
 	</center>
 </div>
