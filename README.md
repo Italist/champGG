@@ -22,7 +22,9 @@ The data used to create these item sets is from Platinum+ players which means yo
 * Quickly see which champions have item set data
 * Quickly sort which champs have item sets for top, middle, adc, support, jungle
 
-![Working Screenshot](https://i.imgur.com/vcboWkZ.png)
+## Screenshots
+![Main Menu](screenshot1.png?raw=true "Main Menu")
+![Champion Data](screenshot2.png?raw=true "Champion Data")
 
 ## Will Riot ban me?
 According to Reddit: A rioter [did this originally](https://www.reddit.com/r/leagueoflegends/comments/2xfovt/i_wrote_a_script_to_generate_item_sets_from/), so it's safe. it doesn't affect gameplay, and you're not doing anything you couldn't do manually if you wanted to waste dozens of hours of your life every patch. Go wild!
