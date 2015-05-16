@@ -1,13 +1,37 @@
 html {
-  font-family: sans-serif;
-  -webkit-text-size-adjust: 100%;
-	  -ms-text-size-adjust: 100%;
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
 }
 body{  
 	margin: 5px;
 }
 div {
 	border: 0 solid;
+}
+.champtable td{
+    font-size: 8pt;
+	font-weight: bold;
+    text-align: center;
+	width: 80px;
+}
+img {
+    cursor: pointer;
+	height: 60px;
+	width: 60px;
+}
+table {
+	table-layout: fixed;
+}
+.desaturate {
+	-webkit-filter: grayscale(100%); 
+	filter: grayscale(100%); 
+	opacity: 0.7;
+}
+.saturate {
+	-webkit-filter: grayscale(0%);
+	filter: grayscale(0%);
+	opacity: 1.0;
 }
 .noselect {
     cursor:default;
@@ -17,9 +41,6 @@ div {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-}
-.th {
-  background-color: transparent;
 }
 .spaceUnder {
   margin-bottom: 24px;

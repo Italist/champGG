@@ -3,7 +3,7 @@ champGG
 #### Easily create custom item sets for every champion in their most popular roles using data from the site http://champion.gg
 The data used to create these item sets is from Platinum+ players which means you will have great builds for all champs!
 ## Setup
-1. Grab the champGG.exe at https://github.com/Gavin770/champGG/releases/latest
+1. Grab the latest relase of champGG.exe: https://github.com/Gavin770/champGG/releases/latest
 2. Run champGG.exe
 ## Features include:
 
@@ -19,6 +19,8 @@ The data used to create these item sets is from Platinum+ players which means yo
 * Removing previous patch item sets (It doesn't touch item sets you have made)
 * Fast and slow download modes in the event your internet connection isn't the greatest
 * Garena Support
+* Quickly see which champions have item set data
+* Quickly sort which champs have item sets for top, middle, adc, support, jungle
 
 ![Working Screenshot](https://i.imgur.com/vcboWkZ.png)
 

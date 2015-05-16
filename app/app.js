@@ -29,6 +29,7 @@ var App = {
 		App.rmdir("locales");
 		App.applySettings();
 		App.writeSettings();
+        GUI.ini();
 	},
 	applySettings: function () {
         "use strict";
@@ -105,6 +106,7 @@ var App = {
 
 		document.getElementById("ui1").style.display = "none";
 		document.getElementById("output").style.display = "block";
+        document.getElementById("champImgs").style.display = "block";
 	},
 
 	getAllSets: function () {
@@ -295,9 +297,11 @@ var App = {
 
 		var itemSetJSON = JSON.stringify(itemSetArr, null, '\t');
 		App.writeFile(fileName, itemSetJSON);
-
+        
+        GUI.processChamp(champJSON["key"], roleFormatted.toLowerCase());
+        
 		App.updateCount();
-		App.log("Saved set for " + champ + " in " + role + " role", "#00cc00");
+		//App.log("Saved set for " + champ + " in " + role + " role", "#00cc00");
 	},
 	updateCount: function (starting) {
 		starting = starting || false;
@@ -543,7 +547,25 @@ var App = {
 			alert("The path: " + path + " does not exist");
 		}
 	},
-	openURL:function(url) {
+	openURL: function (url) {
 		window.open(url);
-	}
+	},
+    fileExist: function (filename) {
+		var fs = require('fs');
+		return fs.existsSync(filename);
+	},
+	getFile: function (uri, filename, callback) {
+		var http = require('http');
+		var fs = require('fs');
+
+		if (!App.fileExist(filename)) {
+			var file = fs.createWriteStream(filename);
+			var request = http.get(uri, function (response) {
+			  response.pipe(file);
+			  setTimeout(callback, 500);
+			});			
+		} else {
+			callback();
+		}
+ 	}
 };
