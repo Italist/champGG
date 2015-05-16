@@ -5,8 +5,8 @@ The data used to create these item sets is from Platinum+ players which means yo
 ## Setup
 1. Grab the latest relase of champGG.exe: https://github.com/Gavin770/champGG/releases/latest
 2. Run champGG.exe
-## Features include:
 
+## Features include:
 ![Ingame Screenshot](https://i.imgur.com/2igOUwo.png)
 
 * Most popular builds
