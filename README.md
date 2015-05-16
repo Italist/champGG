@@ -7,8 +7,6 @@ The data used to create these item sets is from Platinum+ players which means yo
 2. Run champGG.exe
 
 ## Features include:
-![Ingame Screenshot](https://i.imgur.com/2igOUwo.png)
-
 * Most popular builds
 * Highest win rate builds
 * Most popular starting items
@@ -23,6 +21,7 @@ The data used to create these item sets is from Platinum+ players which means yo
 * Quickly sort which champs have item sets for top, middle, adc, support, jungle
 
 ## Screenshots
+![Ingame Screenshot](https://i.imgur.com/2igOUwo.png)
 ![Main Menu](screenshot1.png?raw=true "Main Menu")
 ![Champion Data](screenshot2.png?raw=true "Champion Data")
 
