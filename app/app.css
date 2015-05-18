@@ -3,38 +3,38 @@ html {
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
 }
-body{  
-	margin: 5px;
+body {
+    margin: 5px;
 }
 div {
-	border: 0 solid;
-}
-.champtable td{
-    font-size: 8pt;
-	font-weight: bold;
-    text-align: center;
-	width: 80px;
+    border: 0 solid;
 }
 img {
     cursor: pointer;
-	height: 60px;
-	width: 60px;
+    height: 60px;
+    width: 60px;
 }
 table {
-	table-layout: fixed;
+    table-layout: fixed;
+}
+.champtable td {
+    font-size: 8pt;
+    font-weight: bold;
+    text-align: center;
+    width: 80px;
 }
 .desaturate {
-	-webkit-filter: grayscale(100%); 
-	filter: grayscale(100%); 
-	opacity: 0.7;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    opacity: 0.7;
 }
 .saturate {
-	-webkit-filter: grayscale(0%);
-	filter: grayscale(0%);
-	opacity: 1.0;
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+    opacity: 1.0;
 }
 .noselect {
-    cursor:default;
+    cursor: default;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -43,5 +43,5 @@ table {
     user-select: none;
 }
 .spaceUnder {
-  margin-bottom: 24px;
+    margin-bottom: 24px;
 }
