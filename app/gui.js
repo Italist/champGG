@@ -18,8 +18,8 @@ var GUI = {
         "use strict";
         GUI.CDNVer = App.getBetween(data, '["', '",');
         console.log("GUI.CDNVer =>", GUI.CDNVer);
-        if (App.fileExist("res/champData.json")) {
-            var champDataRaw = App.readFile("res/champData.json"),
+        if (App.fileExist("app/res/champData.json")) {
+            var champDataRaw = App.readFile("app/res/champData.json"),
                 champData = JSON.parse(champDataRaw);
             console.log("Local CDNVer =>", champData.version);
             if (champData.version !== GUI.CDNVer) {
