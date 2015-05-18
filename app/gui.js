@@ -88,19 +88,19 @@ var GUI = {
         for (var champ in champData) {
             GUI.champions.push(champ);
         }
-        App.writeFile("res/champData.json", data);
+        App.writeFile("app/res/champData.json", data);
         GUI.imgTotals = {
             total: GUI.champions.length + 6,
             count: 0
         }; //+6 for role icons
         //Grab role icons
         for (var i = 657; i < 663; i++) {
-            App.getFile("http://ddragon.leagueoflegends.com/cdn/" + GUI.CDNVer + "/img/profileicon/" + i + ".png", "res/" + i + ".png", function() {
+            App.getFile("http://ddragon.leagueoflegends.com/cdn/" + GUI.CDNVer + "/img/profileicon/" + i + ".png", "app/res/" + i + ".png", function() {
                 GUI.countImage();
             });
         }
         for (champ in champData) {
-            App.getFile("http://ddragon.leagueoflegends.com/cdn/" + GUI.CDNVer + "/img/champion/" + champ + ".png", "res/" + champ + ".png", function() {
+            App.getFile("http://ddragon.leagueoflegends.com/cdn/" + GUI.CDNVer + "/img/champion/" + champ + ".png", "app/res/" + champ + ".png", function() {
                 GUI.countImage();
             });
         }
@@ -119,11 +119,11 @@ var GUI = {
     drawChampTable: function() {
         var data = '<table class="table table-bordered table-condensed champtable" style="width:320px;">';
         data += '<tr>';
-        data += '<td><img src="res/662.png" class="desaturate" id="role_top" onmouseover="GUI.showByRole(\'top\')" onmouseout="GUI.resetShowByRole(\'saturate\')"><br>Top</td>';
-        data += '<td><img src="res/659.png" class="desaturate" id="role_middle" onmouseover="GUI.showByRole(\'middle\')" onmouseout="GUI.resetShowByRole(\'saturate\')"><br>Middle</td>';
-        data += '<td><img src="res/660.png" class="desaturate" id="role_adc" onmouseover="GUI.showByRole(\'adc\')" onmouseout="GUI.resetShowByRole(\'saturate\')"><br>ADC</td>';
-        data += '<td><img src="res/661.png" class="desaturate" id="role_support" onmouseover="GUI.showByRole(\'support\')" onmouseout="GUI.resetShowByRole(\'saturate\')"><br>support</td>';
-        data += '<td><img src="res/657.png" class="desaturate" id="role_jungle" onmouseover="GUI.showByRole(\'jungle\')" onmouseout="GUI.resetShowByRole(\'saturate\')"><br>jungle</td>';
+        data += '<td><img src="app/res/662.png" class="desaturate" id="role_top" onmouseover="GUI.showByRole(\'top\')" onmouseout="GUI.resetShowByRole(\'saturate\')"><br>Top</td>';
+        data += '<td><img src="app/res/659.png" class="desaturate" id="role_middle" onmouseover="GUI.showByRole(\'middle\')" onmouseout="GUI.resetShowByRole(\'saturate\')"><br>Middle</td>';
+        data += '<td><img src="app/res/660.png" class="desaturate" id="role_adc" onmouseover="GUI.showByRole(\'adc\')" onmouseout="GUI.resetShowByRole(\'saturate\')"><br>ADC</td>';
+        data += '<td><img src="app/res/661.png" class="desaturate" id="role_support" onmouseover="GUI.showByRole(\'support\')" onmouseout="GUI.resetShowByRole(\'saturate\')"><br>support</td>';
+        data += '<td><img src="app/res/657.png" class="desaturate" id="role_jungle" onmouseover="GUI.showByRole(\'jungle\')" onmouseout="GUI.resetShowByRole(\'saturate\')"><br>jungle</td>';
         data += '</tr>';
         data += '</table>';
 
@@ -134,7 +134,7 @@ var GUI = {
             data += "<tr>";
             for (var col = 0; col < 15; col++) {
                 if (count < max) {
-                    data += '<td onmouseover="GUI.showRoles(\'' + GUI.champions[count] + '\');" onmouseout="GUI.resetRoleRow()"><img src="res/' + GUI.champions[count] + '.png" class="desaturate" id="champ_' + GUI.champions[count] + '"><br>' + GUI.champions[count] + '</td>';
+                    data += '<td onmouseover="GUI.showRoles(\'' + GUI.champions[count] + '\');" onmouseout="GUI.resetRoleRow()"><img src="app/res/' + GUI.champions[count] + '.png" class="desaturate" id="champ_' + GUI.champions[count] + '"><br>' + GUI.champions[count] + '</td>';
                 } else {
                     data += '<td></td>';
                 }
