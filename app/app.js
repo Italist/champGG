@@ -24,7 +24,7 @@ var App = {
 	mode: "",
 	ini: function () {
         "use strict";
-		App.rmdir("locales");
+		// App.rmdir("locales");
 		App.applySettings();
 		App.writeSettings();
 		GUI.ini();
@@ -68,7 +68,7 @@ var App = {
 		} else {
 			if (log) {
 				App.log("Invalid save location:", "$ff0000");
-				App.log(dir, "#ff0000");
+				App.log(dir + "<br>", "#ff0000");
 				App.log("Saving to the champGG directory instead<br>", "#ff0000");
 			}
 			return "ItemSets/" + App.betterDate() + " - ";
@@ -80,7 +80,7 @@ var App = {
 		App.writeSettings();
 		App.mode = (settings.garenaRegion) ? "garena" : "league";
 		App.isValidDir(App.mode);
-		//Remove old patch settings. Does not effect any custom sets made in the league client
+		// Remove old patch settings. Does not effect any custom sets made in the league client
 		if (settings.removeOldSets && App.isValidDir(App.mode)) {
 			App.rmdir(App.getSaveLocation(App.mode));
 			App.mkdir(App.getSaveLocation(App.mode));
@@ -95,7 +95,7 @@ var App = {
 		// App.getOneSet("Kayle", "Top");
 		// App.getOneSet("Kayle", "ADC");
 		// App.getOneSet("Kayle", "Jungle");
-		//Middle, ADC, Top, Jungle, Support
+		// Middle, ADC, Top, Jungle, Support
 		document.getElementById("ui1").style.display = "none";
 		document.getElementById("output").style.display = "block";
 		document.getElementById("champImgs").style.display = "block";
@@ -109,12 +109,12 @@ var App = {
         "use strict";
 		if (data) {
 			if (settings.syncMode) {
-				App.log("Single Request mode enabled", "#0000ee");
+				App.log("Single Request mode enabled. ", "#0000ee");
 			}
-			App.log("Creating item sets for all champions...", "#c0c0c0");
+			App.log("Creating item sets for all champions...<br> ", "#c0c0c0");
 			var list = data.match(/<a href="([^"]*)" style="display:block">/g),
                 saveFolder = App.getSaveLocation(App.mode, true);
-			App.patch = App.getBetween(data, "<small>Patch <strong>", "</strong>");
+			App.patch = App.getBetween(data, "<small>Patch <strong>", "</strong></small>");
 			App.log("Champion.gg item set data is for patch " + App.patch + "<br>", "#c0c0c0");
 			App.queue = [];
 			App.log("ItemSet Save Location: ", "#0000ee");
@@ -125,15 +125,15 @@ var App = {
 			}
 			for (var champPage in list) {
 				App.updateCount(true);
-				data = list[champPage].split("/");
+                data = list[champPage].split("/");
 				var champ = data[2],
 				    role = data[3].split('"')[0],
 				    url = "http://champion.gg/champion/" + champ + "/" + role,
-				    passon = {champ:champ, role:role, saveFolder: saveFolder};
+				    passon = {champ: champ, role: role, saveFolder: saveFolder};
 				if (settings.syncMode) {
 					App.queue.push({passon: passon, url: url});
 				} else {
-					App.getPage(url, function(data, passon){App.getOneSetCB(data, passon);
+					App.getPage(url, function (data, passon) {App.getOneSetCB(data, passon);
                                                            }, passon);
 				}
 			}
@@ -141,38 +141,38 @@ var App = {
 				App.getAllSetsSync_Next();
 			}
 		} else {
-			App.log("Error: No data returned from champion.gg", "#ff0000");
+			App.log("Error: No data returned from champion.gg<br>", "#ff0000");
 		}
 	},
 	getAllSetsSync_Next: function () {
 		if (App.queue.length > 0) {
 			var obj = App.queue.shift();
-			App.getPage(obj.url, function(data, passon){App.getOneSetCB(data, passon);
+			App.getPage(obj.url, function (data, passon) {App.getOneSetCB(data, passon);
                                                        }, obj.passon);
 		}
 	},
-	getOneSet: function(champ, role) {
+	getOneSet: function (champ, role) {
 		var saveFolder = "ItemSets/" + App.betterDate() + " - SINGLES - ",
             url = "http://champion.gg/champion/" + champ + "/" + role,
             passon = {champ:champ, role:role, saveFolder: saveFolder};
-		App.getPage(url, function(data, passon){App.getOneSetCB(data, passon);
+		App.getPage(url, function (data, passon) {App.getOneSetCB(data, passon);
                                                }, passon);
 	},
-	getOneSetCB: function(page, passon) {
+	getOneSetCB: function (page, passon) {
 		var champ = passon.champ,
             role = passon.role,
             saveFolder = passon.saveFolder,
             data = App.getBetween(page, "matchupData.championData = ", "matchupData.patchHistory");
         data = data.trim();
-        data = data.substring(0, data.length - 1); //Remove last ; so the JSON will parse
+        data = data.substring(0, data.length - 1); // Remove last ; so the JSON will parse
 		try {
 			var champJSON = JSON.parse(data);
 		} catch (err) {
-			App.log("No data is available for " + champ + " in " + role + " role", "#cc0000");
+			App.log("No data is available for " + champ + " in " + role + " role<br>", "#cc0000");
 			return;
 		}
 		
-		var currentPatch = App.getBetween(page, "<small>Patch <strong>", "</strong>"),
+		var currentPatch = App.getBetween(page, "<small>Patch <strong>", "</strong></small>"),
             firstMG = champJSON.firstItems.mostGames,
             firstHWP = champJSON.firstItems.highestWinPercent,
             fullMG = champJSON.items.mostGames,
@@ -180,7 +180,7 @@ var App = {
             skillsHWP = champJSON.skills.highestWinPercent.order,
             skillsMG = champJSON.skills.mostGames.order;
 		if (!firstMG.games || !firstHWP.games || !fullMG.games || !fullHWP.games) {
-			App.log("Full data is unavailable for " + champ + " in " + role + " role", "#cc0000");
+			App.log("Full data is unavailable for " + champ + " in " + role + " role<br>", "#cc0000");
 			App.updateCount();
 			return;
 		}
@@ -202,8 +202,8 @@ var App = {
 			"items": App.getItems(fullHWP),
 			"type": "High Win:" + App.getSkillData(skillsHWP) + " (" + fullHWP.winPercent.toString().slice(0, 2) + "% win/" + fullHWP.games + " games)"
 		},
-		//If the string length is too long the getSkillData method adds length
-		// if (fullHWPBlock.type.length > 50 || fullMGBlock.type.length > 50){
+		// If the string length is too long the getSkillData method adds length
+		// if (fullHWPBlock.type.length > 50 || fullMGBlock.type.length > 50) {
 		// 	console.log(fullHWPBlock.type.length, fullMGBlock.type.length);
 		// }
             consumeBlock = {
@@ -260,7 +260,7 @@ var App = {
 		App.writeFile(fileName, itemSetJSON);
 		GUI.processChamp(champJSON.key, roleFormatted.toLowerCase());
 		App.updateCount();
-		//App.log("Saved set for " + champ + " in " + role + " role", "#00cc00");
+		//App.log("Saved set for " + champ + " in " + role + " role<br>", "#00cc00");
 	},
 	updateCount: function (starting) {
 		starting = starting || false;
@@ -269,7 +269,7 @@ var App = {
 		} else {
 			App.count.finished++;
 			App.count.finished = (App.count.finished >= App.count.started) ? App.count.started : App.count.finished;
-			if (settings.syncMode){
+			if (settings.syncMode) {
 				App.getAllSetsSync_Next();
 			}
 		}
@@ -308,7 +308,7 @@ var App = {
 		var result = [];
 		return result.concat(arr1, arr2);
 	},
-	getPage: function(url, callback, passon) {
+	getPage: function (url, callback, passon) {
 		var http = require("http");
 		http.get(url, function (res) {
 			var data = "";
@@ -320,7 +320,7 @@ var App = {
 			});
 		}).on("error", function (error) {
 			App.log("Error: Unable to get " + url, "#ff0000");
-			App.log(error, "#ff0000");
+			App.log(error + "<br>", "#ff0000");
 			App.updateCount();
 			callback(null);
 		});
@@ -348,7 +348,7 @@ var App = {
 			var itemIDs = {};
 			for (item in input.items) {
 				var id = input.items.item.id;
-				id = (id == 2010) ? 2003 : id; //Convert total biscuit to health pot. If they have the mastery the pots will be biscuits.
+				id = (id == 2010) ? 2003 : id; // Convert total biscuit to health pot. If they have the mastery the pots will be biscuits.
 				
 				if (starters){
 					if (itemIDs[id]){
@@ -367,7 +367,7 @@ var App = {
 				var count = 0;
 				for (var itemID in itemIDs) {
 					items.push({
-						"count": itemIDs[itemID],
+						"count": itemIDs.itemID,
 						"id": itemID + ""
 					});
 				}
@@ -375,7 +375,7 @@ var App = {
 		}
 		return items;
 	},
-	writeFile: function(path, data) {
+	writeFile: function (path, data) {
 		try {
 			var fs = require('fs');
 			fs.writeFileSync(path, data);
@@ -389,7 +389,7 @@ var App = {
 			console.log("Error writing file [" + path + "]");
 		}
 	},
-	readFile: function(path) {
+	readFile: function (path) {
 		try {
 			var fs = require('fs');
 			return fs.readFileSync(path, 'utf8');
@@ -397,11 +397,11 @@ var App = {
 			console.log("Error reading file [" + path + "]");
 		}
 	},
-	folderExists: function(path) {
+	folderExists: function (path) {
 		var fs = require('fs');
 		try {
 			var stats = fs.lstatSync(path);
-			//console.log(stats)
+			// console.log(stats)
 			if (stats.isDirectory()) {
 				return true;
 			}
@@ -409,13 +409,13 @@ var App = {
 			return false;
 		}
 	},
-	rmdir: function(path) {
+	rmdir: function (path) {
 		try{
 			var fs = require('fs');
 			if (fs.existsSync(path)) {
 				fs.readdirSync(path).forEach(function (file, index) {
 					var curPath = path + "/" + file;
-					if (fs.lstatSync(curPath).isDirectory()) { //recurse
+					if (fs.lstatSync(curPath).isDirectory()) { // recurse
 						App.rmdir(curPath);
 					} else { // delete file
 						fs.unlinkSync(curPath);
@@ -430,7 +430,7 @@ var App = {
 			}
 		}
 	},
-	mkdir: function(path, root) {
+	mkdir: function (path, root) {
 		var fs = require('fs'),
             dirs = path.split('/'), 
             dir = dirs.shift();
@@ -443,14 +443,14 @@ var App = {
 				alert(App.errorData.msg);
 				window.close();
 			}
-			//dir wasn't made, something went wrong
+			// dir wasn't made, something went wrong
 			if(!fs.statSync(root).isDirectory()) throw new Error(e);
 		}
 		return !dirs.length||App.mkdir(dirs.join('/'), root);
 	},
-	log: function(data, color) {
+	log: function (data, color) {
 		var ele = document.getElementById("output");
-		ele.innerHTML += '<font color="' + color + '">' + data + "</font><br>";
+		ele.innerHTML += '<font color="' + color + '">' + data + "</font>";
 		ele.scrollTop = ele.scrollHeight;
 	},
 	betterDate: function () {
@@ -480,7 +480,7 @@ var App = {
 		if (App.folderExists(path)){
 			settings[mode + "InstallDir"] = path;
 		} else {
-			alert("The path: " + path + " does not exist");
+			alert("The path: " + path + " does not exist.");
 		}
 	},
 	openURL: function (url) {
@@ -495,13 +495,12 @@ var App = {
             fs = require('fs');
 		if (!App.fileExist(filename)) {
 			var file = fs.createWriteStream(filename),
-                request = http.get(uri, function(response) {
+                request = http.get(uri, function (response) {
 			  response.pipe(file);
 			  setTimeout(callback, 500);
 			});			
 		} else {
 			callback();
 		}
-	}
-		
+	}	
 };

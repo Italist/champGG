@@ -11,7 +11,7 @@
     "width": 1400,
     "height": 930,
     "position": "center",
-    "min_width": 350,
+    "min_width": 1380,
     "min_height": 620,
     "resizable": true
   }

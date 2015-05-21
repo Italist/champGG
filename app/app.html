@@ -11,119 +11,99 @@ Created by Gavin Delphia in 2015
 </head>
 
 <body onload="App.ini()">
-
-    <span style="font-size:10px;color:#c0c0c0;" id="status">&nbsp;</span>
-
-    <center>
-        <div id="champImgs" style="display:block;">
-            <div class="progress" style="width:500px;">
-                <div class="progress-bar progress-bar-success active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%;color:black;" id="pbar">Updating champion database.... [0%]</div>
-            </div>
+    <!-- <span class="credits-text" id="status" style="z-index: 2;">&nbsp;</span> -->
+    <div class="well credits-text" id="output"></div>
+    <div id="champImgs" style="display:block;">
+        <div class="progress center" style="width:500px;">
+            <div class="progress-bar progress-bar-success active noselect" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%;color:black;" id="pbar">Updating champion database.... [0%]</div>
         </div>
-
-    </center>
-
-    <div id="ui1" class="noselect" style="display:none;">
-        <center>
-            <br>
-            <table class="table-hover spaceUnder">
-                <tr>
-                    <th>
-                        <center><b>ItemSet Options</b>
-                        </center>
-                    </th>
-                </tr>
-                <tr onclick="selectRow(this)">
-                    <td title="Include the most popular builds" style="width:150px;">frequent builds</td>
-                    <td>
-                        <input id="frequent" type="checkbox" class="checkbox">
-                    </td>
-                </tr>
-                <tr onclick="selectRow(this)">
-                    <td title="Include builds with the highest win rate">high win% builds</td>
-                    <td>
-                        <input id="winrate" type="checkbox" class="checkbox" checked>
-                    </td>
-                </tr>
-                <tr onclick="selectRow(this)">
-                    <td title="Include a set specific for starter items">starter items</td>
-                    <td>
-                        <input id="starters" type="checkbox" class="checkbox" checked>
-                    </td>
-                </tr>
-                <tr onclick="selectRow(this)">
-                    <td title="Include a generic consumable set for all champions">consumables</td>
-                    <td>
-                        <input id="consumables" type="checkbox" class="checkbox" checked>
-                    </td>
-                </tr>
-                <tr onclick="selectRow(this)">
-                    <td title="Include first 5 skills to build and skill max order">skill order</td>
-                    <td>
-                        <input id="skills" type="checkbox" class="checkbox" checked>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>&nbsp;</td>
-                </tr>
-
-                <tr>
-                    <th>
-                        <center><b>Client Options</b>
-                        </center>
-                    </th>
-                </tr>
-                <tr onclick="selectRow(this)">
-                    <td title="Remove old champion.gg item sets. Will not remove custom sets you have created">remove old sets</td>
-                    <td>
-                        <input id="remove_old" type="checkbox" class="checkbox" checked>
-                    </td>
-                </tr>
-                <tr onclick="selectRow(this)">
-                    <td title="Enables client compatibility with the Garena region">garena client</td>
-                    <td>
-                        <input id="garena" type="checkbox" class="checkbox">
-                    </td>
-                </tr>
-                <tr onclick="selectRow(this)">
-                    <td title="A possible fix for connection errors and slower internet connections" style="width:150px;">slow download mode</td>
-                    <td>
-                        <input id="slowmode" type="checkbox" class="checkbox">
-                    </td>
-                </tr>
-            </table>
-
-            <h5><b>Change Save Locations</b></h5>
-
-            <input type="button" value="League" onclick="App.setConfig('league');" class="btn btn-default">
-            <input type="button" value="Garena" onclick="App.setConfig('garena');" class="btn btn-default">
-
-            <br>
-            <br>
-            <input type="button" value="Download Item Sets" onclick="App.iniDownload();" class="btn btn-primary">
-        </center>
     </div>
 
+    <div class="noselect center" id="ui1" style="display:none;">
+        <br>
+        <table class="table-hover spaceUnder">
+            <tr>
+                <th>
+                    <b>ItemSet Options</b>
+                </th>
+            </tr>
+            <tr onclick="selectRow(this)">
+                <td title="Include the most popular builds" style="width:150px;">frequent builds</td>
+                <td>
+                    <input class="checkbox" id="frequent" type="checkbox">
+                </td>
+            </tr>
+            <tr onclick="selectRow(this)">
+                <td title="Include builds with the highest win rate">high win% builds</td>
+                <td>
+                    <input class="checkbox" id="winrate" type="checkbox" checked>
+                </td>
+            </tr>
+            <tr onclick="selectRow(this)">
+                <td title="Include a set specific for starter items">starter items</td>
+                <td>
+                    <input class="checkbox" id="starters" type="checkbox" checked>
+                </td>
+            </tr>
+            <tr onclick="selectRow(this)">
+                <td title="Include a generic consumable set for all champions">consumables</td>
+                <td>
+                    <input class="checkbox" id="consumables" type="checkbox" checked>
+                </td>
+            </tr>
+            <tr onclick="selectRow(this)">
+                <td title="Include first 5 skills to build and skill max order">skill order</td>
+                <td>
+                    <input class="checkbox" id="skills" type="checkbox" checked>
+                </td>
+            </tr>
 
-    <span style="font-size:10px;color:#c0c0c0;" id="credits">
-	<center>
-		<br>
-		Original PHP script by ebildude123 <a href="javascript:App.openURL('https://github.com/ebildude123/champion.gg-item-set-creator')">Github</a>
-		<br>
-		Item Data provided by <a href="javascript:App.openURL('http://champion.gg')">http://champion.gg/</a>
-		<br>
-		Created by Gavin Delphia
-	</center>
-</span>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
 
-    <br>
-    <br>
-    <div id="output" style="height:200px;width:100%;overflow-y:scroll;font-size:10px;color:#c0c0c0;display:none;" class="well"></div>
-    <script src="gui.js"></script>
+            <tr>
+                <th>
+                    <b>Client Options</b>
+                </th>
+            </tr>
+            <tr onclick="selectRow(this)">
+                <td title="Remove old champion.gg item sets. Will not remove custom sets you have created">remove old sets</td>
+                <td>
+                    <input class="checkbox" id="remove_old" type="checkbox" checked>
+                </td>
+            </tr>
+            <tr onclick="selectRow(this)">
+                <td title="Enables client compatibility with the Garena region">garena client</td>
+                <td>
+                    <input class="checkbox" id="garena" type="checkbox">
+                </td>
+            </tr>
+            <tr onclick="selectRow(this)">
+                <td title="A possible fix for connection errors and slower internet connections" style="width:150px;">slow download mode</td>
+                <td>
+                    <input class="checkbox" id="slowmode" type="checkbox">
+                </td>
+            </tr>
+        </table>
+        <div class="center" id="action-buttons">
+            <h5><b>Change Save Locations</b></h5>
+            <input class="btn btn-default" type="button" value="League" onclick="App.setConfig('league');">
+            <input class="btn btn-default" type="button" value="Garena" onclick="App.setConfig('garena');">
+            <br>
+            <br>
+            <input class="btn btn-primary" type="button" value="Download Item Sets" onclick="App.iniDownload();">
+        </div>
+    </div>
+    <div class="credits-text" id="credits">
+            <p>Original PHP script by ebildude123 <a href="javascript:App.openURL('https://github.com/ebildude123/champion.gg-item-set-creator')">Github</a></p>
+        <p>
+            Item Data provided by <a href="javascript:App.openURL('http://champion.gg')">http://champion.gg/</a></p>
+            <p>Created by <a href="javascript:App.openURL('https://github.com/Gavin770')">Gavin Delphia</a></p>
+    </div>
     <script src="settings.js"></script>
     <script src="app.js"></script>
+    <script src="gui.js"></script>
     <script src="checkboxes.js"></script>
 </body>
-
 </html>
