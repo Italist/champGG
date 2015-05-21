@@ -1,6 +1,8 @@
 champGG
 =========
 #### Easily create custom item sets for every champion in their most popular roles using data from the site http://champion.gg
+
+[![Join the chat at https://gitter.im/Italist/champGG](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Italist/champGG?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 The data used to create these item sets is from Platinum+ players which means you will have great builds for all champs!
 ## Setup
 1. Grab the latest relase of champGG.exe: https://github.com/Gavin770/champGG/releases/latest
